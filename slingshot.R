@@ -28,12 +28,12 @@ outdir <- args$outdir
 #rds.path <- '/PROJ/development/xiezhuoming/proj/velocyto/input/demo/seekone_demo/demo_seurat.rds'
 
 
-sce <- readRDS(seurat_onj)
+sce <- readRDS(seurat_obj)
 
 cl<-sce[[inference_clusters]][,1]
 rd<-Embeddings(sce, reduction_space)
 
-sds <- slingshot(rd, clusterLabels = cl, reducedDim = 'umap',start.clus =5,end.clus =8)
+sds <- slingshot(rd, clusterLabels = cl, reducedDim = 'umap',start.clus =start_cluster,end.clus =end_cluster)
 
 ident.colors <- (scales::hue_pal())(n = length(x = levels(x = sce)))
 names(x = ident.colors) <- levels(x = sce)
