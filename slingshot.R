@@ -7,7 +7,7 @@ library(argparse)
 
 
 parser = ArgumentParser()
-parser$add_argument("--seuart_obj", help="seurat 对象的RDS文件。",required=TRUE)
+parser$add_argument("--seurat_obj", help="seurat 对象的RDS文件。",required=TRUE)
 parser$add_argument("--inference_clusters)", help="设置用于轨迹推断的分组变量，默认是seurat_clusters"
                     ,required=TRUE,default='seurat_clusters')
 parser$add_argument("--reduction_space", help="设置需要推断轨迹的降维空间，默认是umap",default='umap')
@@ -19,7 +19,7 @@ parser$add_argument("--outdir", help='默认是./output',required=TRUE,default="
 args <- parser$parse_args()
 str(args)
 
-seuart_obj <- args$seuart_obj
+seurat_obj <- args$seurat_obj
 inference_clusters <- args$inference_clusters
 reduction_space <- args$reduction_space
 start_cluster <- args$start_cluster
