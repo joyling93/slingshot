@@ -34,6 +34,7 @@ cl<-sce[[inference_clusters]][,1]
 rd<-Embeddings(sce, reduction_space)
 
 sds <- slingshot(rd, clusterLabels = cl, reducedDim = 'umap',start.clus =start_cluster,end.clus =end_cluster)
+saveRDS(sds,file.path(outdir,'slingshot_obj.rds'))
 
 ident.colors <- (scales::hue_pal())(n = length(x = levels(x = sce)))
 names(x = ident.colors) <- levels(x = sce)
