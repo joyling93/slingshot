@@ -11,7 +11,7 @@ Slingshot 在运行时需要提供一个分组变量（即 inference_cluster ）
 --reduction_space	设置需要推断轨迹的降维空间，默认是umap。
 --start_cluster	设置轨迹推断起始 cluster，非必须。
 --end_cluster	设置轨迹推断结束 cluster，非必须。
---outdi	默认是./output。
+--outdir	默认是./output。
 
 结果文件说明
 slingshot_obj.rds 	slingshot 对象，包含轨迹推断结果和画图坐标，可用函数 slingPseudotime 提取 Pseudotime value。
