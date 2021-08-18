@@ -44,9 +44,12 @@ names(x = cell.colors) <- colnames(x = sce)
 png(file.path(outdir,'curv.png'))
 plot(rd, col = cell.colors, asp = 1, pch = 16)
 lines(SlingshotDataSet(sds), lwd=2, col='black')
+legend("topright",legend=names(ident.colors),col=ident.colors,cex=0.5,pch = 16)
 dev.off()
 
 png(file.path(outdir,'line.png'))
 plot(rd, col = cell.colors, asp = 1, pch = 16)
 lines(SlingshotDataSet(sds), lwd=2, col='black',type='l')
+legend("topright",legend=names(ident.colors),col=ident.colors,cex=0.5,pch = 16)
 dev.off()
+
